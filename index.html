@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Shadow Contract</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Shadow Contract</h1>
+    <p>의뢰 계약서를 작성하세요.</p>
+
+    <label for="client-name">의뢰인 이름:</label><br>
+    <input type="text" id="client-name" placeholder="예: 홍길동"><br><br>
+
+    <label for="target">대상 이름:</label><br>
+    <input type="text" id="target" placeholder="예: 김철수"><br><br>
+
+    <label for="method">수행 방식:</label><br>
+    <input type="text" id="method" placeholder="예: 정밀 저격"><br><br>
+
+    <label for="price">보수 조건:</label><br>
+    <input type="text" id="price" placeholder="예: 500만원"><br><br>
+
+    <button onclick="generateContract()">계약서 PDF 생성</button>
+  </main>
+</body>
+</html>
+
