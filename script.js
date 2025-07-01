@@ -9,11 +9,6 @@ function generateContract() {
   const detail = document.getElementById('detail').value.trim();
   const password = document.getElementById('admin-pass').value.trim();
 
-  if (!name || !target || !method || !price) {
-    alert("Please fill in all fields.");
-    return;
-  }
-
   doc.setFont("Helvetica", "bold");
   doc.setFontSize(16);
   doc.text("Shadow Contract", 10, 10);
@@ -21,20 +16,42 @@ function generateContract() {
   doc.setFontSize(12);
   doc.setFont("Helvetica", "normal");
 
+  
   if (password === "admin1234") {
     doc.text("Admin Access Granted", 10, 20);
     doc.text("Waiting List:", 10, 30);
-    doc.text("- Client: Alice | Target: Bob | Pay: 10| Detail: QR10", 10, 40);
-    doc.text("- Client: Charlie | Target: Dave | Pay: 15| Detail: QR11", 10, 50);
-    doc.text("- Client: Unknown | Target: Newton | Pay: 3| Detail: director of Younghwa children's home", 10, 60);
+    doc.text("- Client: Alice | Target: Bob | Pay: 10 | Detail: QR10", 10, 40);
+    doc.text("- Client: Charlie | Target: Dave | Pay: 15 | Detail: QR11", 10, 50);
+    doc.text("- Client: Unknown | Target: Newton | Pay: 3 | Detail: director of Younghwa children's home", 10, 60);
     doc.save("admin-waitlist.pdf");
-  } else {
-    doc.text(`Client: ${name}`, 10, 20);
-    doc.text(`Target: ${target}`, 10, 30);
-    doc.text(`Method: ${method}`, 10, 40);
-    doc.text(`Payment: ${price}`, 10, 50);
-    doc.text(`Payment: ${detail}`, 10, 60);
-    doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 70);
-    doc.save(`contract-${name}.pdf`);
+    return;
   }
+
+  
+  if (password && password !== "admin1234") {
+    alert("Incorrect admin password.");
+    return;
+  }
+
+  
+  if (!name || !target || !method || !price) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  doc.text(`Client: ${name}`, 10, 20);
+  doc.text(`Target: ${target}`, 10, 30);
+  doc.text(`Method: ${method}`, 10, 40);
+  doc.text(`Payment: ${price}`, 10, 50);
+  doc.text(`Detail: ${detail}`, 10, 60);
+  doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 70);
+
+  const pageHeight = doc.internal.pageSize.height;
+  doc.line(20, pageHeight - 30, 80, pageHeight - 30); 
+  doc.text("Client Signature", 20, pageHeight - 25);
+
+  doc.line(120, pageHeight - 30, 180, pageHeight - 30); 
+  doc.text("Signed by: Young-ho", 120, pageHeight - 25);
+
+  doc.save(`contract-${name || "client"}.pdf`);
 }
