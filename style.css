@@ -37,3 +37,16 @@ button {
 button:hover {
   background-color: darkred;
 }
+
+.footer-image {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer-image img {
+  max-width: 90%;
+  height: auto;
+  opacity: 0.95;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}

@@ -17,19 +17,20 @@ function generateContract() {
   doc.setFont("Helvetica", "normal");
 
   
-  if (password === "admin1234") {
-    doc.text("Admin Access Granted", 10, 20);
+  if (password === "54321") {
+    doc.text("Check the ", 10, 20);
     doc.text("Waiting List:", 10, 30);
-    doc.text("- Client: Alice | Target: Bob | Pay: 10 | Detail: QR10", 10, 40);
-    doc.text("- Client: Charlie | Target: Dave | Pay: 15 | Detail: QR11", 10, 50);
-    doc.text("- Client: Unknown | Target: Newton | Pay: 3 | Detail: director of Younghwa children's home", 10, 60);
+    doc.text("- Client: Unknown | Target: Newton | Pay: 3", 10, 40);
+    doc.text("- Job : director of Younghwa children's home", 10, 50);
+    doc.text("- ", 10, 60);
+    
     doc.save("admin-waitlist.pdf");
     return;
   }
 
   
-  if (password && password !== "admin1234") {
-    alert("Incorrect admin password.");
+  if (password && password !== "54321") {
+    alert("Incorrect admin password. Did you submit a contract?");
     return;
   }
 
@@ -51,7 +52,7 @@ function generateContract() {
   doc.text("Client Signature", 20, pageHeight - 25);
 
   doc.line(120, pageHeight - 30, 180, pageHeight - 30); 
-  doc.text("Signed by: Young-ho", 120, pageHeight - 25);
+  doc.text("Signed by: Mirror", 120, pageHeight - 25);
 
   doc.save(`contract-${name || "client"}.pdf`);
 }
