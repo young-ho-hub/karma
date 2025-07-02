@@ -39,12 +39,12 @@ button:hover {
 }
 
 .footer-image {
-  margin-top: 80px;
+  margin-top: 40px;
   text-align: right;
 }
 
 .footer-image img {
-  max-width: 50%;
+  max-width: 90%;
   height: auto;
   opacity: 0.95;
   border-radius: 8px;
