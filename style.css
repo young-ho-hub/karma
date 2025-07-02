@@ -44,7 +44,7 @@ button:hover {
 }
 
 .footer-image img {
-  max-width: 90%;
+  max-width: 50%;
   height: auto;
   opacity: 0.95;
   border-radius: 8px;
