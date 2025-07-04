@@ -18,8 +18,7 @@ function generateContract() {
 
   
   if (password === "020822") {
-    doc.text("Check the ", 10, 20);
-    doc.text("Waiting List:", 10, 30);
+    doc.text("Check the Waiting List:", 10, 20);
     doc.text("- Client: Unknown | Target: Newton | Pay: 3", 10, 40);
     doc.text("- Job : director of Younghwa children's home", 10, 50);
     doc.text("- Check bank account you used most recently", 10, 60);
@@ -29,8 +28,8 @@ function generateContract() {
     doc.text("- https://young-ho-hub.github.io/bankaccount2/", 10, 100);
     doc.text("- Bank of america", 10, 110);
     doc.text("- https://young-ho-hub.github.io/bankaccount3/", 10, 120);
-    doc.text("- account number: 58890204050307", 10, 80);
-    doc.text("- for password, see the picture below.", 10, 90);
+    doc.text("- account number: 58890204050307", 10, 130);
+    doc.text("- for password, see the picture below.", 10, 140);
     const img = document.getElementById("stamp");
     doc.addImage(img, "PNG", 140, 200, 60, 60); // 오른쪽 하단에 50x50 크기로
     
