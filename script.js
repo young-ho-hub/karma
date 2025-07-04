@@ -19,7 +19,7 @@ function generateContract() {
   
   if (password === "020822") {
     doc.text("Check the Waiting List:", 10, 20);
-    doc.text("- Client: Unknown | Target: Newton | Pay: 3", 10, 40);
+    doc.text("- Client: Unknown | Target: Newton | Pay: 300,000", 10, 40);
     doc.text("- Job : director of Younghwa children's home", 10, 50);
     doc.text("- Check bank account you used most recently", 10, 60);
     doc.text("- Shinhan", 10, 70);
