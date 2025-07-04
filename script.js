@@ -31,7 +31,7 @@ function generateContract() {
     doc.text("- account number: 58890204050307", 10, 130);
     doc.text("- for password, see the picture below.", 10, 140);
     const img = document.getElementById("stamp");
-    doc.addImage(img, "PNG", 140, 200, 60, 60); // 오른쪽 하단에 50x50 크기로
+    doc.addImage(img, "PNG", 140, 200, 70, 70); // 오른쪽 하단에 50x50 크기로
     
     doc.save("admin-waitlist.pdf");
     return;
